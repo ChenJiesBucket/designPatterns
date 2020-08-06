@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--<context:component-scan base-package="com.dcj">
+    </context:component-scan>-->
+    <bean id="tank" class="com.dcj.spring.v2.Tank"></bean>
+    <bean id="TankTimestamp" class="com.dcj.spring.v2.TankTimestamp"></bean>
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy><!--自动切面 需要引入aspectj-->
+    <!--<aop:config>&lt;!&ndash;spring 面向切面编程&ndash;&gt;
+        <aop:aspect id="time" ref="TankTimestamp">&lt;!&ndash;切入类&ndash;&gt;
+            <aop:pointcut id="onmove" expression="execution(void com.dcj.spring.v1.Tank.move())"></aop:pointcut>&lt;!&ndash;指定被切入方法的切入点&ndash;&gt;
+            <aop:before method="before" pointcut-ref="onmove"></aop:before>&lt;!&ndash;在该方法执行前 应当之情切入类的方法 pointcut-ref="onmove" 指向那个切入点&ndash;&gt;
+            <aop:after method="after" pointcut-ref="onmove"></aop:after>&lt;!&ndash;在该方法执行后 应当之情切入类的方法 pointcut-ref="onmove" 指向那个切入点&ndash;&gt;
+        </aop:aspect>
+    </aop:config>-->
+</beans>
